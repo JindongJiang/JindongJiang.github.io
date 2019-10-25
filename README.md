@@ -4,7 +4,7 @@
 
 I am currently a MS student in ECE department of Rutgers University. And I am work with [Prof. Sungjin Ahn](http://www.sungjinahn.com) on the topic of Probabilistic Generative Models.
 
-### Publication(s)
+## Publication(s)
 
 Names with "\*" indicates equal contribution or equal advising
 
