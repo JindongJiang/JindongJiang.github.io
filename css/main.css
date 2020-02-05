@@ -328,10 +328,25 @@ ul {
   margin-left: -.5em;
 }
 
-.pdf_project {
+/* .pdf_project {
     font-family: "Ubuntu Mono";
     font-size: 14px;
     margin: 0em .9em 0em;
+} */
+
+/* Jd */
+.pdf_project {
+  font-family: "Ubuntu Mono";
+  font-size: 16px;
+  margin: 0em 0em 0em;
+}
+
+.dest {
+  font-family: "Comic Sans MS";
+  font-size: 16px;
+  margin-left: .9em;
+  margin-top: .1em;
+  /* color: rgb(51, 0, 51); */
 }
 
 .blog_cv {
