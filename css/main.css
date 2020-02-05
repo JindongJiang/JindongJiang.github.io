@@ -338,14 +338,15 @@ ul {
 .pdf_project {
   font-family: "Ubuntu Mono";
   font-size: 16px;
-  margin: 0em 0em 0em;
+  margin-left: .9em;
+  margin-top: .1em;
 }
 
 .dest {
   font-family: "Comic Sans MS";
   font-size: 16px;
-  margin-left: .9em;
-  margin-top: .1em;
+  /* margin-left: .9em;
+  margin-top: .1em; */
   /* color: rgb(51, 0, 51); */
 }
 
