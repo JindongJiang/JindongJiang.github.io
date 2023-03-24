@@ -1,251 +1,300 @@
 <!DOCTYPE html>
-<html>
-	<head>
-	<meta name="generator" content="Hugo 0.78.2" />
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Jindong Jiang</title><link rel="apple-touch-icon" sizes="180x180" href=https://JindongJiang.github.io/apple-touch-icon.png>
-	<link rel="icon" type="image/png" sizes="32x32" href=https://JindongJiang.github.io/favicon-32x32.png>
-	<link rel="icon" type="image/png" sizes="16x16" href=https://JindongJiang.github.io/favicon-16x16.png>
-	<link rel="manifest" href=https://JindongJiang.github.io/site.webmanifest>
-	<link rel="mask-icon" href=https://JindongJiang.github.io/safari-pinned-tab.svg color="#5bbad5">
-	<meta name="msapplication-TileColor" content="#da532c">
-	<meta name="theme-color" content="#ffffff">
+<html lang="en">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="alternate" type="application/rss+xml" href="https://JindongJiang.github.io/index.xml" title="Jindong Jiang" />
-	<meta property="og:title" content="Jindong Jiang" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://JindongJiang.github.io/" />
+<head>
+    <title>Jindong Jiang</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
+    <style>
+        /* Remove the navbar's default margin-bottom and rounded borders */
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Jindong Jiang"/>
-<meta name="twitter:description" content=""/>
-<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:500,100,300" rel="stylesheet">
+        /*div.content { width: 1000px;     margin-left: auto;*/
+        /*margin-right: auto; }*/
 
-	<link rel="stylesheet" type="text/css" media="screen" href=https://JindongJiang.github.io/css/normalize.css />
-	<link rel="stylesheet" type="text/css" media="screen" href=https://JindongJiang.github.io/css/main.css />
+        body {
+            margin: 1em auto;
+            max-width: 60%;
+            /*font-family: 'Lato', sans-serif;*/
+            /* font-family: Gill Sans, Gill Sans MT, Calibri; */
+            font-family: "Ubuntu", sans-serif;
+            /* font-family: "Ubuntu Mono", sans-serif; */
+            font-size: 20px;
+            color: #333;
+            font-weight: 300;
+        }
 
-	<script src=https://JindongJiang.github.io/js/feather.min.js></script><script src=https://JindongJiang.github.io/js/main.js></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+        .dest {
+            font-family: "Comic Sans MS";
+            /* font-size: 16px;
+            margin-left: .9em; */
+            /* margin-left: .9em;
+  margin-top: .1em; */
+            /* color: rgb(51, 0, 51); */
+        }
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [['$','$'], ['\\(','\\)']],
-        displayMath: [['$$','$$'], ['\[','\]']],
-        processEscapes: true,
-        processEnvironments: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-        TeX: { equationNumbers: { autoNumber: "AMS" },
-             extensions: ["AMSmath.js", "AMSsymbols.js"] }
-      }
-    });
-    </script>
+        .special {
+            font-family: "Comic Sans MS";
+            /* font-size: 16px; */
+            /* margin-left: 1.9em; */
+            /* margin-left: .9em;
+  margin-top: .1em; */
+            /* color: rgb(255, 156, 64); */
+            color: rgb(241, 110, 45)
+        }
 
+        /* Add a gray background color and some padding to the footer */
+        footer {
+            background-color: #f2f2f2;
+            padding: 25px;
+        }
+
+        .header {
+            margin-bottom: 20px;
+            /* padding-bottom: 20px; */
+        }
+
+        .header .profile_image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 25%;
+            height: auto;
+            border-radius: 50%;
+            /* float: left; */
+        }
+
+        a,
+        a:hover {
+            /* color: #a00; */
+            color: rgb(187, 116, 56);
+            text-decoration: none;
+        }
+
+        html,
+        button,
+        input,
+        select,
+        textarea {
+            color: #222;
+        }
+
+        ::-moz-selection {
+            background: #b3d4fc;
+            text-shadow: none;
+        }
+
+        ::selection {
+            background: #b3d4fc;
+            text-shadow: none;
+        }
+
+        .publications {
+            /* margin-left: 0em; */
+        }
+
+        .collaborators {
+            /* margin-left: 0em; */
+        }
+
+
+        /* Jd */
+        .pdf_project {
+            font-family: "Ubuntu Mono";
+            /* font-size: 16px;
+            margin-left: .1em;
+            margin-top: .1em; */
+        }
+    </style>
 </head>
 
-
-	<body>
-		<div class="container wrapper">
-			<div class="header">
-	<img src=https://JindongJiang.github.io/profile.jpg class="profile_image">
-	<h1 class="site-title">Jindong Jiang</h1>
-	<div class="site-affilation">
-		<span class="affilation"><ul class="flat">
-				<li class="position">PhD Student, Rutgers University</li>
-				<li class="email">firstname.lastname at rutgers.edu</li>
-			</ul></span>
-		
-
-		<nav class="nav social">
-			<ul class="flat"><a href="https://github.com/JindongJiang" title="GitHub"><i data-feather="github"></i></a><a href="https://twitter.com/jindongjiang" title="Twitter"><i data-feather="twitter"></i></a><a href="https://www.linkedin.com/in/jindong-jiang-019521126" title="LinkedIn"><i data-feather="linkedin"></i></a>
-			</ul>
-		</nav>
-	</div>
-
-	<nav class="nav">
-		<ul class="flat">
-			
-		</ul>
-	</nav>
-</div>
-
-			<div class="introduction"><span>
-		I am a PhD student at Rutgers University working with <a href="http://www.sungjinahn.com">Prof. Sungjin Ahn</a> on the topic of Probabilistic Agent Learning. And I am currently focusing on representation learning using generative models.
-	</span>
-	<br><span>
-		<b>Interests.</b> Machine Learning, Probabilistic Generative Models, Deep Reinforcement Learning
-	</span>
-</div>
-
-			<div class="introduction">
-	
-</div>
-
-			<div class="introduction">
-	
-	<h4>Publications</h4><div class="year">2020</div>
-
-	
-	
-	
-	<ul>
-		
-		<li>
-			
-			<p class="publications"> Generative Neurosymbolic Machines. </p>
-			
-
-			<span class="collaborators">
-				<strong>J. Jiang</strong> and S. Ahn
-			</span>
-
-			<p class="dest">
-				NeurIPS 2020
-
-				
-				<p class="special">
-					Spotlight (top 4% = 395/9454)
-				</p>
-				
-
-				
-				<p class="pdf_project">
-					
-					[<a href="https://arxiv.org/pdf/2010.12152.pdf">pdf</a>]
-					
-
-					
-					[<a href="https://github.com/JindongJiang/GNM">project</a>]
-					
-				</p>
-				
-			</p>
-			
-			
-
-		</li>
-		
-		<li>
-			
-			<p class="publications"> Improving Generative Imagination in Object-Centric World Models. </p>
-			
-
-			<span class="collaborators">
-				Z. Lin, Y. Wu, S. Peri, B. Fu, <strong>J. Jiang</strong>, S. Ahn
-			</span>
-
-			<p class="dest">
-				ICML 2020
-
-				
-
-				
-				<p class="pdf_project">
-					
-					[<a href="https://proceedings.icml.cc/static/paper_files/icml/2020/4995-Paper.pdf">pdf</a>]
-					
-
-					
-					[<a href="https://sites.google.com/view/gswm/home">project</a>]
-					
-				</p>
-				
-			</p>
-			
-			
-
-		</li>
-		
-		<li>
-			
-			<p class="publications"> SCALOR: Generative World Models with Scalable Object Representations. </p>
-			
-
-			<span class="collaborators">
-				{ <strong>J. Jiang</strong>, S. Janghorbani }, G. Melo, and S. Ahn
-			</span>
-
-			<p class="dest">
-				ICLR 2020
-
-				
-
-				
-				<p class="pdf_project">
-					
-					[<a href="https://arxiv.org/pdf/1910.02384.pdf">pdf</a>]
-					
-
-					
-					[<a href="https://sites.google.com/view/scalor">project</a>]
-					
-				</p>
-				
-			</p>
-			
-			
-
-		</li>
-		
-		<li>
-			
-			<p class="publications"> SPACE: Unsupervised Object-Oriented Scene Representation via Spatial Attention and Decomposition. </p>
-			
-
-			<span class="collaborators">
-				{ Z. Lin, Y. Wu, S. Peri, W. Sun }, G. Singh, F. Deng, <strong>J. Jiang</strong>, S. Ahn
-			</span>
-
-			<p class="dest">
-				ICLR 2020
-
-				
-
-				
-				<p class="pdf_project">
-					
-					[<a href="https://openreview.net/pdf?id=rkl03ySYDH">pdf</a>]
-					
-
-					
-					[<a href="https://sites.google.com/view/space-project-page">project</a>]
-					
-				</p>
-				
-			</p>
-			
-			
-
-		</li>
-		
-	</ul></div>
-
-		</div>
-		</div>
-		<div class="footer wrapper">
-	<nav class="nav">
-		<div><a href="https://github.com/hadisinaee/avicenna">Avicenna Theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
-	</nav>
-</div>
+<body>
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-150931098-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-<script>
-	feather.replace()
+    <div class="content">
+        <!-- <div class="container wrapper"> -->
+        <div class="header">
+            <img src=https://JindongJiang.github.io/profile.jpg class="profile_image">
+            <h1>Jindong Jiang</h1>
+            <p>PhD Student &middot; Rutgers University</p>
+            <p>Email: firstname.lastname at rutgers.edu &middot; <a
+                    href="https://scholar.google.com/citations?user=6oo8xOQAAAAJ&hl=en">Google Scholar</a> &middot;
+                <a href="https://github.com/JindongJiang">GitHub</a>
+            </p>
+            <!-- <div class="contact-info">
+                <p class="email">Email: firstname.lastname at rutgers.edu</p>
+                <div class="links">
+                    <a href="https://scholar.google.com/citations?user=6oo8xOQAAAAJ&hl=en">Google Scholar</a> &middot;
+                    <a href="https://github.com/JindongJiang">GitHub</a>
+                </div>
+            </div> -->
+            <p>&nbsp;</p>
+            <p>I am a PhD student at Rutgers University working with <a href="https://www.sungjinahn.com">Prof. Sungjin
+                    Ahn</a>.
+                <!-- My research interests lie in the unsupervised learning of controllable and interpretable generative
+                models,
+                which I believe are critical for the practical application and widespread adoption of AI systems. -->
+                My research interests lie at the intersection of structured representation learning, compositional scene
+                synthesis,
+                and generative models, with a strong focus on developing unsupervised techniques.
+            </p>
+            <p>My current focus is investigating how deep generative models can be used to achieve structured
+                representations and compositional scene synthesis in a fully unsupervised manner.
+                <!-- on the topic of Probabilistic Agent Learning.  -->
+                <!-- And I am currently focusing on representation learning using generative models. -->
+            </p>
+            <!-- <p>Before joining Rutgers, I received my Bachelor's degree in Computer Science from Zhejiang University in 2019.
+            I have interned at Microsoft Research Asia and SenseTime.</p> -->
+            <span>
+                <b>Interests.&nbsp;</b> Unsupervised Representation Learning, Probabilistic Generative Models
+            </span>
+            <p>&nbsp;</p>
+            <hr />
+            <h3>News</h3>
+            <ul>
+                <li><em>Mar 2023: </em>Preprint of our new work, <a
+                        href="https://arxiv.org/abs/2303.10834">Object-Centric Slot Diffusion</a>,
+                    for unsupervised object-centric learning using Diffusion Models, is out on arXiv!</li>
+                 <li><em>Feb 2023: </em>I will be joining <a href="https://research.adobe.com/">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Adobe_Corporate_logo.svg/2880px-Adobe_Corporate_logo.svg.png" 
+                    alt="Adobe" style="width: 80px; height: auto; vertical-align: middle;"></a> as a Research Scientist Intern in the Summer of 2023!
+                </li>
+                <!-- <li><em>Jan 2023: </em>Our recent work, <a href="https://arxiv.org/abs/2211.01177">Neural Systematic
+                        Binder</a>, has been accepted at ICLR 2023.</li>
+                <li><em>Nov 2022:&nbsp;</em>Preprint of our new work, <a href="https://arxiv.org/abs/2211.01177">Neural
+                        Systematic Binder</a>, for unsupervised factor binding within slots, is out on arXiv! See our
+                    project page <a href="https://sites.google.com/view/neural-systematic-binder">here</a>.</li>
+                <li><em>Sep 2022: </em>Our recent work, <a href="https://arxiv.org/abs/2205.14065">STEVE</a>, has been
+                    accepted at NeurIPS 2022.</li>
+                <li><em>May 2022:&nbsp;</em>Preprint of our new work, <a
+                        href="https://arxiv.org/abs/2205.14065">STEVE</a>, for unsupervised decomposition of complex and
+                    naturalistic videos is out on Arxiv! See our project page <a
+                        href="https://sites.google.com/view/slot-transformer-for-videos">here</a>.&nbsp;</li>
+                <li><em>Jan 2022:</em> Our recent work, <a href="https://arxiv.org/abs/2110.11405">SLATE</a>, has been
+                    accepted at ICLR 2022 and was also presented at the NeurIPS 2021 Workshop on "Controllable
+                    Generative Modeling in Language and Vision".</li>
+                <li><em>Oct 2021:</em> Preprint of our new work, <a href="https://arxiv.org/abs/2110.11405">SLATE</a>,
+                    for building a text-free DALL-E via object-centric learning is out on <a
+                        href="https://arxiv.org/pdf/2110.11405.pdf">Arxiv</a>! Our code is released <a
+                        href="https://github.com/singhgautam/slate">here</a> and the project page <a
+                        href="https://sites.google.com/view/slate-autoencoder">here</a>.</li> -->
+            </ul>
+            <!-- <h3>Old News</h3> -->
+            <hr />
+            <h3>Publications</h3>
+            <p>&nbsp;</p>
+            <ul>
+                <li>
+                    <p class="publications">Object-Centric Slot Diffusion</p>
+                    <ul>
+                        <li>
+                            <span class="collaborators">
+                                <span style="text-decoration: underline;">Jindong Jiang</span>, Fei Deng, Gautam Singh, Sungjin Ahn
+                            </span>
+                        </li>
+                        <li>
+                            <span class="dest"> Arxiv Preprint </span>
+                            <span class="pdf_project">
+                                [<a href="https://arxiv.org/abs/2303.10834">pdf</a>]
+                            </span>
+                        </li>
+                    </ul>
+                    </p>
+                </li>
+                <li>
+                    <p class="publications">Generative Neurosymbolic Machines</p>
+                    <ul>
+                        <li>
+                            <span class="collaborators">
+                                <span style="text-decoration: underline;">Jindong Jiang</span> and Sungjin Ahn
+                            </span>
+                        </li>
+                        <li>
+                            <span class="dest"> NeurIPS 2020 </span>
+                            <span class="special"> Spotlight (top 4% = 395/9454) </span>
+                            <span class="pdf_project">
+                                [<a href="https://arxiv.org/abs/2010.12152">paper</a>]
+                                [<a href="https://github.com/JindongJiang/GNM">code</a>]
+                            </span>
+                        </li>
+                    </ul>
+                    </p>
+                </li>
+                <li>
+                    <p class="publications">Improving Generative Imagination in Object-Centric World Models</p>
+                    <ul>
+                        <li>
+                            <span class="collaborators">
+                                Zhixuan Lin, Yi-Fu Wu, Skand Peri, Bofeng Fu, <span style="text-decoration: underline;">Jindong Jiang</span>, Sungjin Ahn
+                            </span>
+                        </li>
+                        <li>
+                            <span class="dest">
+                                ICML 2020
+                            </span>
+                            <span class="pdf_project">
+                                [<a href="https://arxiv.org/abs/2010.02054">paper</a>]
+                                [<a href="https://sites.google.com/view/gswm/home">webpage</a>]
+                            </span>
+                        </li>
+                    </ul>
 
-</script>
-	</body>
+                    
+                </li>
+                <li>
+                    <p class="publications">SCALOR: Generative World Models with Scalable Object Representations</p>
+                    <ul>
+                        <li>
+                            <span class="collaborators">
+                                { <span style="text-decoration: underline;">Jindong Jiang</span>, Sepehr Janghorbani }, Gerard de Melo, Sungjin Ahn
+                            </span>
+                            <li>
+                                <span class="dest">
+                                    ICLR 2020
+                                </span>
+                                <span class="pdf_project">
+                                    [<a href="https://arxiv.org/abs/1910.02384">paper</a>]
+                                    [<a href="https://sites.google.com/view/scalor">webpage</a>]
+                                </span>
+                            </li>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <p class="publications">SPACE: Unsupervised Object-Oriented Scene Representation via Spatial Attention and Decomposition</p>
+                    <ul>
+                        <li>
+                            <span class="collaborators">
+                                { Zhixuan Lin, Yi-Fu Wu, Skand Vishwanath Peri }, Weihao Sun, Gautam Singh, Fei Deng, 
+                                <span style="text-decoration: underline;">Jindong Jiang</span>, Sungjin Ahn
+                            </span>
+                        </li>
+                        <li>
+                            <span class="dest">
+                                ICLR 2020
+                            </span>
+                            <span class="pdf_project">
+                                [<a href="https://arxiv.org/abs/2001.02407">paper</a>]
+                                [<a href="https://sites.google.com/view/space-project-page">webpage</a>]
+                            </span>
+                        </li>
+                    </ul>
+
+                    
+                </li>
+            </ul>
+
+        </div>
+
+
+</body>
 
 </html>
