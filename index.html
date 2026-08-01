@@ -5,8 +5,8 @@
     <title>Jindong Jiang</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:,">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
     <style>
@@ -20,15 +20,22 @@
         /*margin-right: auto; }*/
 
         body {
-            margin: 1em auto;
-            max-width: 60%;
+            margin: 2em auto;
+            width: calc(100% - 48px);
+            max-width: 1020px;
             /*font-family: 'Lato', sans-serif;*/
             /* font-family: Gill Sans, Gill Sans MT, Calibri; */
             font-family: "Ubuntu", sans-serif;
             /* font-family: "Ubuntu Mono", sans-serif; */
-            font-size: 20px;
+            font-size: 18px;
             color: #333;
             font-weight: 300;
+            line-height: 1.55;
+        }
+
+        .content.container {
+            max-width: none;
+            padding: 0;
         }
 
         .dest {
@@ -65,7 +72,8 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
-            max-width: 25%;
+            width: 180px;
+            max-width: 30%;
             height: auto;
             border-radius: 50%;
             /* float: left; */
@@ -118,9 +126,276 @@
             margin-bottom: 20px;
         }
 
+        hr {
+            border: 0;
+            border-top: 1px solid #e7e1da;
+            margin: 2rem 0 1.6rem;
+        }
+
+        .publication-section {
+            margin-top: 0.25rem;
+        }
+
+        .news-logo {
+            position: relative;
+            display: inline-block;
+            width: 68px;
+            height: 18px;
+            margin: 0 0.2rem;
+            overflow: hidden;
+            vertical-align: -3px;
+        }
+
+        .news-logo img {
+            position: absolute;
+            top: -18px;
+            left: -13px;
+            width: 96px;
+            max-width: none;
+            height: auto;
+        }
+
+        .publication-heading {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-heading h3 {
+            margin: 0;
+        }
+
+        .publication-view-toggle {
+            display: inline-flex;
+            gap: 2px;
+            padding: 2px;
+            border: 1px solid #e3dcd5;
+            border-radius: 6px;
+            background: #f7f4f1;
+        }
+
+        .publication-view-toggle button {
+            padding: 0.28rem 0.55rem;
+            border: 0;
+            border-radius: 4px;
+            background: transparent;
+            color: #817970;
+            font-family: inherit;
+            font-size: 0.7em;
+            font-weight: 400;
+            line-height: 1.35;
+            cursor: pointer;
+        }
+
+        .publication-view-toggle button[aria-pressed="true"] {
+            background: #fff;
+            color: #54493f;
+            box-shadow: 0 1px 3px rgba(54, 42, 32, 0.1);
+        }
+
+        .publication-view-toggle button:focus {
+            outline: none;
+        }
+
+        .publication-view-toggle button:focus-visible {
+            outline: 2px solid #bb7438;
+            outline-offset: 2px;
+        }
+
+        .area-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1.25rem 0 2rem;
+        }
+
+        .area-nav a {
+            display: inline-flex;
+            align-items: center;
+            min-height: 34px;
+            padding: 0.35rem 0.75rem;
+            border: 1px solid #ded6ce;
+            border-radius: 999px;
+            background: #fff;
+            color: #6f4a2f;
+            font-size: 0.76em;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            transition: border-color 120ms ease, background 120ms ease, transform 120ms ease;
+        }
+
+        .area-nav a:hover,
+        .area-nav a:focus-visible {
+            border-color: #bb7438;
+            background: #fff9f3;
+            transform: translateY(-1px);
+        }
+
+        .research-group {
+            margin: 0 0 2.4rem;
+            scroll-margin-top: 1.5rem;
+        }
+
+        .year-view {
+            margin-top: 1.25rem;
+        }
+
+        .research-group-header {
+            margin-bottom: 0.9rem;
+            padding-bottom: 0.55rem;
+            border-bottom: 2px solid #eadfd5;
+        }
+
+        .research-group-header h4 {
+            margin: 0;
+            color: #2d2925;
+            font-size: 1.08em;
+            font-weight: 600;
+        }
+
+        .publication-list {
+            display: grid;
+            gap: 0.75rem;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .publication-card {
+            display: grid;
+            grid-template-columns: 58px minmax(0, 1fr);
+            gap: 1rem;
+            padding: 1rem 1.1rem;
+            border: 1px solid #ebe5df;
+            border-left: 4px solid #bb7438;
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(54, 42, 32, 0.035);
+        }
+
+        .research-group[data-area="agentic"] .publication-card {
+            border-left-color: #8a5a44;
+        }
+
+        .research-group[data-area="llm"] .publication-card {
+            border-left-color: #a56837;
+        }
+
+        .research-group[data-area="vlm"] .publication-card {
+            border-left-color: #b8863b;
+        }
+
+        .research-group[data-area="vision"] .publication-card {
+            border-left-color: #557b78;
+        }
+
+        .research-group[data-area="phd"] .publication-card {
+            border-left-color: #6d6a8a;
+        }
+
+        .publication-year {
+            color: #9a6a45;
+            font-family: "Ubuntu Mono", monospace;
+            font-size: 0.82em;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            padding-top: 0.15rem;
+        }
+
+        .publication-title {
+            margin: 0 0 0.25rem;
+            color: #27231f;
+            font-size: 0.94em;
+            font-weight: 500;
+            line-height: 1.35;
+        }
+
+        .publication-title a {
+            color: inherit;
+        }
+
+        .publication-title a:hover,
+        .publication-title a:focus-visible {
+            color: #a6602f;
+        }
+
+        .publication-authors {
+            margin: 0 0 0.45rem;
+            color: #625d58;
+            font-size: 0.73em;
+            line-height: 1.45;
+        }
+
+        .publication-authors .me {
+            color: #332d28;
+            font-weight: 600;
+            text-decoration: underline;
+            text-decoration-color: #c8a98e;
+            text-underline-offset: 2px;
+        }
+
+        .publication-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.45rem;
+        }
+
+        .venue {
+            display: inline-flex;
+            align-items: center;
+            min-height: 24px;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            background: #f3eee9;
+            color: #5b4d42;
+            font-family: "Ubuntu Mono", monospace;
+            font-size: 0.69em;
+            font-weight: 600;
+        }
+
+        .award {
+            color: #c55f2c;
+            font-size: 0.7em;
+            font-weight: 500;
+        }
+
+        .publication-links {
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+        }
+
+        .publication-links a {
+            display: inline-flex;
+            align-items: center;
+            min-height: 24px;
+            padding: 0.12rem 0.45rem;
+            border: 1px solid #dfd5cc;
+            border-radius: 4px;
+            color: #8c552f;
+            font-family: "Ubuntu Mono", monospace;
+            font-size: 0.66em;
+        }
+
+        .publication-links a:hover,
+        .publication-links a:focus-visible {
+            border-color: #bb7438;
+            background: #fff9f3;
+        }
+
+        .publication-note {
+            margin: -1rem 0 0;
+            color: #8a8178;
+            font-size: 0.7em;
+        }
+
         @media (max-width: 992px) {
             body {
-                max-width: 80%;
+                width: calc(100% - 40px);
+                max-width: 880px;
                 font-size: 18px;
             }
 
@@ -133,23 +408,57 @@
         /* making it more responsive on mobile devices. */
         @media (max-width: 768px) {
             body {
-                max-width: 90%;
+                width: calc(100% - 32px);
+                max-width: none;
                 font-size: 16px;
             }
 
             .header .profile_image {
                 max-width: 40%;
             }
+
+            .publication-heading {
+                display: block;
+            }
+
+            .publication-view-toggle {
+                margin-top: 0.25rem;
+            }
+
+            .publication-card {
+                grid-template-columns: 48px minmax(0, 1fr);
+                gap: 0.7rem;
+                padding: 0.9rem;
+            }
         }
 
         @media (max-width: 480px) {
             body {
-                max-width: 95%;
+                width: calc(100% - 24px);
+                max-width: none;
                 font-size: 14px;
             }
 
             .header .profile_image {
                 max-width: 50%;
+            }
+
+            .area-nav {
+                gap: 0.4rem;
+            }
+
+            .area-nav a {
+                min-height: 32px;
+                padding: 0.32rem 0.62rem;
+            }
+
+            .publication-card {
+                grid-template-columns: 1fr;
+                gap: 0.2rem;
+            }
+
+            .publication-year {
+                padding-top: 0;
             }
         }
     </style>
@@ -167,29 +476,21 @@
             <p>Research Scientist &middot; NVIDIA Research</p>
             <p>Email: jindongj at nvidia.com &middot; <a
                     href="https://scholar.google.com/citations?user=6oo8xOQAAAAJ&hl=en&sortby=pubdate">Google Scholar</a> &middot;
-                <a href="https://github.com/JindongJiang">GitHub</a>
+                <a href="https://www.linkedin.com/in/jindong-jiang-019521126">LinkedIn</a>
             </p>
-            <!-- <div class="contact-info">
-                <p class="email">Email: firstname.lastname at rutgers.edu</p>
-                <div class="links">
-                    <a href="https://scholar.google.com/citations?user=6oo8xOQAAAAJ&hl=en">Google Scholar</a> &middot;
-                    <a href="https://github.com/JindongJiang">GitHub</a>
-                </div>
-            </div> -->
             <!-- <p>&nbsp;</p> -->
             <!-- <p>&thinsp;</p> -->
             <hr />
             <h3>About</h3>
-            <p>I am a Research Scientist at NVIDIA Research. I do architecture research for VLMs and LLMs.
-                <!-- Prior to joining NVIDIA, I was a PhD student at Rutgers University under the supervision of <a href="https://www.sungjinahn.com">Prof. Sungjin Ahn</a>. -->
-                <!-- My research interests lie in the unsupervised learning of controllable and interpretable generative
-                models,
-                which I believe are critical for the practical application and widespread adoption of AI systems. -->
-                <!-- My research interests lie at the intersection of structured representation learning and generative world models,
-                with a strong focus on developing unsupervised/self-supervised techniques. -->
-                <!-- My research interests lie at the intersection of representation learning and visual reasoning, with a strong interests in developing novel architectures  -->
-                <!-- developing unsupervised/self-supervised pre-training approaches  -->
-                <!-- that can improve agent's visual reasoning capabilities. -->
+            <p>
+                I am a Research Scientist at <a href="https://research.nvidia.com/">NVIDIA Research</a>.
+                I received my Ph.D. in Computer Science from Rutgers University in April 2025, advised by
+                <a href="https://www.sungjinahn.com/">Prof. Sungjin Ahn</a>.
+            </p>
+            <p>
+                My research interests lie in agentic AI and the development of efficient large language and
+                vision-language models. I have also worked on computer vision, structured representation learning,
+                and world models.
             </p>
             <!-- <p>
                 The long-term objective of my research is to develop artificial intelligence agents capable of human-like reasoning. This involves designing systems that can uncover latent structure of the physical world, predict future scenarios based on current states, infer the causality or correlation between events, and engage in logical planning to accomplish goals. 
@@ -209,213 +510,251 @@
             <hr />
             <h3>News</h3>
             <ul>
+                <li><em>May 2026: </em>We released <a
+                    href="https://research.nvidia.com/publication/2026-05_nemotron-labs-diffusion-tri-mode-language-model-unifying-autoregressive">Nemotron-Labs-Diffusion</a>,
+                    a tri-mode LM unifying autoregressive, diffusion, and self-speculation decoding in a single architecture.
+                </li>
+                <li><em>Apr 2026: </em>We released <a
+                    href="https://recursivemas.github.io/">Recursive Multi-Agent Systems</a>, a framework for recursive
+                    agent collaboration in latent space.
+                </li>
+                <li><em>Mar 2026: </em>We released <a
+                    href="https://arxiv.org/abs/2603.00198">Stateful Token Reduction</a> for hybrid VLMs: 75% fewer
+                    tokens and 4.2&times; faster prefilling with the same or better long-video accuracy.
+                </li>
+                <li><em>Feb 2026: </em>Our <a href="https://research.nvidia.com/labs/lpr/4dpqa/">4DP-QA</a>, a
+                    geometry-grounded VLM training recipe for 4D spatiotemporal understanding, was accepted to
+                    <span class="dest">CVPR 2026</span>.
+                </li>
+                <li><em>Sep 2025: </em>Our <a href="https://arxiv.org/abs/2504.15271">Eagle 2.5</a>, an 8B VLM that
+                    matches GPT-4o and models 10&times; larger on long-video understanding, was
+                    accepted to <span class="dest">NeurIPS 2025</span>.
+                </li>
                 <li><em>May 2025: </em>I joined <a href="https://research.nvidia.com/labs/lpr/">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/NVIDIA_logo.svg/2560px-NVIDIA_logo.svg.png"
-                            alt="NVIDIA logo" style="width: auto; height: 20px; vertical-align: middle;"> Learning and Perception Research Group</a> as a Research
+                        <span class="news-logo"><img
+                            src="https://iprsoftwaremedia.com/219/files/202512/692f56b83d6332f881bbc58b_nvidia-logo-horiz-blk-16x9%201/nvidia-logo-horiz-blk-16x9%201_thmb.png?v=3b6e36c5-dc74-4a75-86f4-5faefc2a7f7d"
+                            alt="NVIDIA"></span>Learning and Perception Research Group</a> as a Research
                     Scientist.
                 </li>
-                <li><em>April 2025: </em>I successfully completed my Ph.D. defense at <a href="https://www.cs.rutgers.edu/">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/7/74/Rutgers_University_The_State_University_of_New_Jersey.png"
-                            alt="Rutgers University logo" style="width: auto; height: 20px; vertical-align: middle;"> Rutgers University</a>. 
+                <li><em>Apr 2025: </em>I successfully completed my Ph.D. defense at <a href="https://www.cs.rutgers.edu/">
+                        Rutgers University</a>.
                 </li>
                 <li><em>Mar 2025: </em>Preprint of our new work, <a
                     href="https://research.nvidia.com/labs/lpr/storm/">Token-Efficient Long Video Understanding for Multimodal LLMs</a>,
                 for long-video Multimodal LLMs, is out on arXiv.</li>
                 <li><em>Sep 2024: </em>Our <a
                     href="https://slotssms.github.io/">Slot State Space Models</a> is accepted to <span class="dest">NeurIPS 2024</span>.</li>
-                <li><em>June 2024: </em>Preprint of our new work, <a
+                <li><em>Jun 2024: </em>Preprint of our new work, <a
                     href="https://slotssms.github.io/">Slot State Space Models</a>,
                 for modular sequence modeling, is out on arXiv.</li>
-                <li><em>June 2024: </em>I joined <a href="https://research.nvidia.com/labs/lpr/">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/NVIDIA_logo.svg/2560px-NVIDIA_logo.svg.png"
-                            alt="NVIDIA logo" style="width: auto; height: 20px; vertical-align: middle;"> Learning and Perception Research Group</a> as a Research
+                <li><em>Jun 2024: </em>I joined <a href="https://research.nvidia.com/labs/lpr/">
+                        <span class="news-logo"><img
+                            src="https://iprsoftwaremedia.com/219/files/202512/692f56b83d6332f881bbc58b_nvidia-logo-horiz-blk-16x9%201/nvidia-logo-horiz-blk-16x9%201_thmb.png?v=3b6e36c5-dc74-4a75-86f4-5faefc2a7f7d"
+                            alt="NVIDIA"></span>Learning and Perception Research Group</a> as a Research
                     Intern in the Summer of 2024.
                 </li>
                 <li><em>Feb 2024: </em>Our <a href="https://arxiv.org/abs/2406.01062">Layout-Agnostic Scene Text Image Synthesis with Diffusion Models</a> is accepted to <span class="dest">CVPR 2024</span>.</li>
                 <li><em>Sep 2023: </em>Our <a href="https://latentslotdiffusion.github.io/">Object-Centric Slot Diffusion</a> is accepted to <span class="dest">NeurIPS 2023</span> as
                     a 🌟Spotlight🌟 paper.</li>
-                <li><em>Apr 2023: </em>Our <a href="https://generative-vision.github.io/workshop-CVPR-23/data/33.pdf">Object-Centric Slot Diffusion for Unsupervised Compositional Generation</a>,
-                    is accepted to <span class="dest">CVPR 2023</span> <a href="https://generative-vision.github.io/workshop-CVPR-23/">GCV Workshop</a>.</li>
                 <!-- <li><em>Mar 2023: </em>Preprint of our new work, <a
                         href="https://arxiv.org/abs/2303.10834">Object-Centric Slot Diffusion</a>,
                     for unsupervised object-centric learning using Diffusion Models, is out on arXiv!</li> -->
-                <li><em>Feb 2023: </em>I will be joining <a href="https://research.adobe.com/">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Adobe_Corporate_logo.svg/2880px-Adobe_Corporate_logo.svg.png"
-                            alt="Adobe" style="width: auto; height: 20px; vertical-align: middle;"></a> as a Research
-                    Scientist Intern in the Summer of 2023.
+                <li><em>Feb 2023: </em>I will be joining <a href="https://research.adobe.com/">Adobe Research</a>
+                    as a Research Scientist Intern in the Summer of 2023.
                 </li>
             </ul>
             <!-- <h3>Old News</h3> -->
             <!-- <p>&thinsp;</p> -->
             <hr />
-            <h3>Publications</h3>
-            <div class="vspace_small"></div>
-            <ul>
-                <li>
-                    <p class="publications">Token-Efficient Long Video Understanding for Multimodal LLMs</p>
-                    <ul>
-                        <li>
-                            <span class="collaborators">
-                                { <span style="text-decoration: underline;">Jindong Jiang</span>, Xiuyu Li },
-                                Zhijian Liu, Muyang Li, Guo Chen, Zhiqi Li, De-An Huang, Guilin Liu, Zhiding Yu, 
-                                Kurt Keutzer, Sungjin Ahn, Jan Kautz, Hongxu Yin, Yao Lu, Song Han, Wonmin Byeon
-                            </span>
-                        </li>
-                        <li>
-                            <span class="dest"> Preprint 2025 </span>
-                            <span class="pdf_project">
-                                [<a href="https://arxiv.org/abs/2503.04130">paper</a>]
-                                [<a href="https://research.nvidia.com/labs/lpr/storm/">webpage</a>]
-                            </span>
-                        </li>
-                    </ul>
-                    <div class="vspace_small"></div>
-                </li>
-                <li>
-                    <p class="publications">Slot State Space Models</p>
-                    <ul>
-                        <li>
-                            <span class="collaborators">
-                                <span style="text-decoration: underline;">Jindong Jiang</span>, Fei Deng, Gautam Singh, Minseung Lee, Sungjin Ahn
-                            </span>
-                        </li>
-                        <li>
-                            <span class="dest"> NeurIPS 2024 </span>
-                            <span class="pdf_project">
-                                [<a href="https://arxiv.org/abs/2406.12272">paper</a>]
-                                [<a href="https://slotssms.github.io/">webpage</a>]
-                            </span>
-                        </li>
-                    </ul>
-                    <div class="vspace_small"></div>
-                </li>
-                <li>
-                    <p class="publications">SceneTextGen: Layout-Agnostic Scene Text Image Synthesis with Diffusion Models</p>
-                    <ul>
-                        <li>
-                            <span class="collaborators">
-                                Qilong Zhangli, <span style="text-decoration: underline;">Jindong Jiang</span>, Di Liu, Licheng Yu, Xiaoliang Dai, Ankit Ramchandani, Guan Pang, Dimitris N. Metaxas, Praveen Krishnan
-                            </span>
-                        </li>
-                        <li>
-                            <span class="dest"> CVPR 2024 </span>
-                            <span class="pdf_project">
-                                [<a href="https://arxiv.org/abs/2406.01062">paper</a>]
-                            </span>
-                        </li>
-                    </ul>
-                    <div class="vspace_small"></div>
-                </li>
-                <li>
-                    <p class="publications">Object-Centric Slot Diffusion</p>
-                    <ul>
-                        <li>
-                            <span class="collaborators">
-                                <span style="text-decoration: underline;">Jindong Jiang</span>, Fei Deng, Gautam Singh,
-                                Sungjin Ahn
-                            </span>
-                        </li>
-                        <li>
-                            <span class="dest"> NeurIPS 2023 </span>
-                            <span class="special"> 🌟Spotlight🌟 (top 3% = 378/12343) </span>
-                            <span class="pdf_project">
-                                [<a href="https://arxiv.org/abs/2303.10834">paper</a>]
-                                [<a href="https://latentslotdiffusion.github.io/">webpage</a>]
-                            </span>
-                        </li>
-                    </ul>
-                    <!-- <p>&nbsp;</p> -->
-                    <div class="vspace_small"></div>
-                </li>
-                <li>
-                    <p class="publications">Generative Neurosymbolic Machines</p>
-                    <ul>
-                        <li>
-                            <span class="collaborators">
-                                <span style="text-decoration: underline;">Jindong Jiang</span> and Sungjin Ahn
-                            </span>
-                        </li>
-                        <li>
-                            <span class="dest"> NeurIPS 2020 </span>
-                            <span class="special"> 🌟Spotlight🌟 (top 4% = 395/9454) </span>
-                            <span class="pdf_project">
-                                [<a href="https://arxiv.org/abs/2010.12152">paper</a>]
-                                [<a href="https://github.com/JindongJiang/GNM">code</a>]
-                            </span>
-                        </li>
-                    </ul>
-                    <!-- <p>&nbsp;</p> -->
-                    <div class="vspace_small"></div>
-                </li>
-                <li>
-                    <p class="publications">Improving Generative Imagination in Object-Centric World Models</p>
-                    <ul>
-                        <li>
-                            <span class="collaborators">
-                                Zhixuan Lin, Yi-Fu Wu, Skand Peri, Bofeng Fu, <span
-                                    style="text-decoration: underline;">Jindong Jiang</span>, Sungjin Ahn
-                            </span>
-                        </li>
-                        <li>
-                            <span class="dest">
-                                ICML 2020
-                            </span>
-                            <span class="pdf_project">
-                                [<a href="https://arxiv.org/abs/2010.02054">paper</a>]
-                                [<a href="https://sites.google.com/view/gswm/home">webpage</a>]
-                            </span>
-                        </li>
-                    </ul>
-                    <!-- <p>&nbsp;</p> -->
-                    <div class="vspace_small"></div>
+            <section class="publication-section" id="publications">
+                <div class="publication-heading">
+                    <h3>Publications</h3>
+                    <div class="publication-view-toggle" role="group" aria-label="Arrange publications">
+                        <button type="button" data-view="area" aria-pressed="true">By research area</button>
+                        <button type="button" data-view="year" aria-pressed="false">By year</button>
+                    </div>
+                </div>
 
-                </li>
-                <li>
-                    <p class="publications">SCALOR: Generative World Models with Scalable Object Representations</p>
-                    <ul>
-                        <li>
-                            <span class="collaborators">
-                                { <span style="text-decoration: underline;">Jindong Jiang</span>, Sepehr Janghorbani },
-                                Gerard de Melo, Sungjin Ahn
-                            </span>
-                        </li>
-                        <li>
-                            <span class="dest">
-                                ICLR 2020
-                            </span>
-                            <span class="pdf_project">
-                                [<a href="https://arxiv.org/abs/1910.02384">paper</a>]
-                                [<a href="https://sites.google.com/view/scalor">webpage</a>]
-                            </span>
-                        </li>
-                    </ul>
-                    <!-- <p>&nbsp;</p> -->
-                    <div class="vspace_small"></div>
-                </li>
-                <li>
-                    <p class="publications">SPACE: Unsupervised Object-Oriented Scene Representation via Spatial Attention
-                        and Decomposition</p>
-                    <ul>
-                        <li>
-                            <span class="collaborators">
-                                { Zhixuan Lin, Yi-Fu Wu, Skand Vishwanath Peri }, Weihao Sun, Gautam Singh, Fei Deng,
-                                <span style="text-decoration: underline;">Jindong Jiang</span>, Sungjin Ahn
-                            </span>
-                        </li>
-                        <li>
-                            <span class="dest">
-                                ICLR 2020
-                            </span>
-                            <span class="pdf_project">
-                                [<a href="https://arxiv.org/abs/2001.02407">paper</a>]
-                                [<a href="https://sites.google.com/view/space-project-page">webpage</a>]
-                            </span>
+                <nav class="area-nav" aria-label="Publication research areas">
+                    <a href="#agentic-ai">Agentic AI</a>
+                    <a href="#large-language-models">Large Language Models</a>
+                    <a href="#vision-language-models">Vision-Language Models</a>
+                    <a href="#computer-vision">Computer Vision</a>
+                    <a href="#phd-research">Structured Representation</a>
+                </nav>
+
+                <section class="research-group" data-area="agentic" id="agentic-ai">
+                    <header class="research-group-header">
+                        <h4>Agentic AI</h4>
+                    </header>
+                    <ul class="publication-list">
+                        <li class="publication-card">
+                            <div class="publication-year">2026</div>
+                            <div>
+                                <p class="publication-title"><a href="https://arxiv.org/abs/2604.25917">Recursive Multi-Agent Systems</a></p>
+                                <p class="publication-authors">Jiaru Zou, Rui Pan, Ruizhong Qiu, Pan Lu, Shizhe Diao, <span class="me">Jindong Jiang</span>, Hanghang Tong, Tong Zhang, Markus J. Buehler, Jingrui He, James Zou</p>
+                                <div class="publication-meta">
+                                    <span class="venue">arXiv 2026</span>
+                                    <span class="publication-links"><a href="https://arxiv.org/abs/2604.25917">paper</a><a href="https://recursivemas.github.io/">project</a></span>
+                                </div>
+                            </div>
                         </li>
                     </ul>
-                    <!-- <p>&nbsp;</p> -->
-                    <div class="vspace_small"></div>
-                </li>
-            </ul>
+                </section>
+
+                <section class="research-group" data-area="llm" id="large-language-models">
+                    <header class="research-group-header">
+                        <h4>Large Language Models</h4>
+                    </header>
+                    <ul class="publication-list">
+                        <li class="publication-card">
+                            <div class="publication-year">2026</div>
+                            <div>
+                                <p class="publication-title"><a href="https://arxiv.org/abs/2607.05722">Nemotron-Labs-Diffusion: A Tri-Mode Language Model Unifying Autoregressive, Diffusion, and Self-Speculation Decoding</a></p>
+                                <p class="publication-authors">Yonggan Fu, Lexington Whalen, Abhinav Garg, Chengyue Wu, Maksim Khadkevich, Nicolai Oswald, Enze Xie, Daniel Egert, Sharath Turuvekere Sreenivas, Shizhe Diao, Chenhan Yu, Ye Yu, Weijia Chen, Sajad Norouzi, Jingyu Liu, Shiyi Lan, Ligeng Zhu, Jin Wang, <span class="me">Jindong Jiang</span>, Morteza Mardani, Mehran Maghoumi, Song Han, Ante Jukić, Nima Tajbakhsh, Jan Kautz, Pavlo Molchanov</p>
+                                <div class="publication-meta">
+                                    <span class="venue">arXiv 2026</span>
+                                    <span class="publication-links"><a href="https://arxiv.org/abs/2607.05722">paper</a></span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="research-group" data-area="vlm" id="vision-language-models">
+                    <header class="research-group-header">
+                        <h4>Vision-Language Models</h4>
+                    </header>
+                    <ul class="publication-list">
+                        <li class="publication-card">
+                            <div class="publication-year">2026</div>
+                            <div>
+                                <p class="publication-title"><a href="https://arxiv.org/abs/2603.00198">Stateful Token Reduction for Long-Video Hybrid VLMs</a></p>
+                                <p class="publication-authors"><span class="me">Jindong Jiang</span>, Amala Sanjay Deshmukh, Kateryna Chumachenko, Karan Sapra, Zhiding Yu, Guilin Liu, Andrew Tao, Pavlo Molchanov, Jan Kautz, Wonmin Byeon</p>
+                                <div class="publication-meta"><span class="venue">arXiv 2026</span><span class="publication-links"><a href="https://arxiv.org/abs/2603.00198">paper</a></span></div>
+                            </div>
+                        </li>
+                        <li class="publication-card">
+                            <div class="publication-year">2025</div>
+                            <div>
+                                <p class="publication-title"><a href="https://arxiv.org/abs/2504.15271">Eagle 2.5: Boosting Long-Context Post-Training for Frontier Vision-Language Models</a></p>
+                                <p class="publication-authors">Guo Chen, Zhiqi Li, Shihao Wang, <span class="me">Jindong Jiang</span>, Yicheng Liu, Lidong Lu, De-An Huang, Wonmin Byeon, Matthieu Le, Max Ehrlich, Tong Lu, Limin Wang, Bryan Catanzaro, Jan Kautz, Andrew Tao, Zhiding Yu, Guilin Liu</p>
+                                <div class="publication-meta"><span class="venue">NeurIPS 2025</span><span class="publication-links"><a href="https://arxiv.org/abs/2504.15271">paper</a></span></div>
+                            </div>
+                        </li>
+                        <li class="publication-card">
+                            <div class="publication-year">2025</div>
+                            <div>
+                                <p class="publication-title"><a href="https://arxiv.org/abs/2503.04130">STORM: Token-Efficient Long Video Understanding for Multimodal LLMs</a></p>
+                                <p class="publication-authors"><span class="me">Jindong Jiang</span>*, Xiuyu Li*, Zhijian Liu, Muyang Li, Guo Chen, Zhiqi Li, De-An Huang, Guilin Liu, Zhiding Yu, Kurt Keutzer, Sungjin Ahn, Jan Kautz, Hongxu Yin, Yao Lu, Song Han, Wonmin Byeon</p>
+                                <div class="publication-meta"><span class="venue">ICCV Workshops 2025</span><span class="publication-links"><a href="https://arxiv.org/abs/2503.04130">paper</a><a href="https://research.nvidia.com/labs/lpr/storm/">project</a></span></div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="research-group" data-area="vision" id="computer-vision">
+                    <header class="research-group-header">
+                        <h4>Computer Vision</h4>
+                    </header>
+                    <ul class="publication-list">
+                        <li class="publication-card">
+                            <div class="publication-year">2026</div>
+                            <div>
+                                <p class="publication-title"><a href="https://arxiv.org/abs/2606.11568">4DP-QA: Scalable QA for 4D Perception in Vision Language Models</a></p>
+                                <p class="publication-authors">Seokju Cho, Abhishek Badki, Hang Su, <span class="me">Jindong Jiang</span>, Ziyao Zeng, Seungryong Kim, Sifei Liu, Orazio Gallo</p>
+                                <div class="publication-meta"><span class="venue">CVPR 2026</span><span class="publication-links"><a href="https://arxiv.org/abs/2606.11568">paper</a><a href="https://research.nvidia.com/labs/lpr/4dpqa/">project</a></span></div>
+                            </div>
+                        </li>
+                        <li class="publication-card">
+                            <div class="publication-year">2024</div>
+                            <div>
+                                <p class="publication-title"><a href="https://arxiv.org/abs/2406.01062">SceneTextGen: Layout-Agnostic Scene Text Image Synthesis with Diffusion Models</a></p>
+                                <p class="publication-authors">Qilong Zhangli, <span class="me">Jindong Jiang</span>, Di Liu, Licheng Yu, Xiaoliang Dai, Ankit Ramchandani, Guan Pang, Dimitris N. Metaxas, Praveen Krishnan</p>
+                                <div class="publication-meta"><span class="venue">CVPR 2024</span><span class="publication-links"><a href="https://arxiv.org/abs/2406.01062">paper</a></span></div>
+                            </div>
+                        </li>
+                        <li class="publication-card">
+                            <div class="publication-year">2024</div>
+                            <div>
+                                <p class="publication-title"><a href="https://arxiv.org/abs/2306.05414">ProxEdit: Improving Tuning-Free Real Image Editing With Proximal Guidance</a></p>
+                                <p class="publication-authors">Ligong Han, Song Wen, Qi Chen, Zhixing Zhang, Kunpeng Song, Mengwei Ren, Ruijiang Gao, Anastasis Stathopoulos, Xiaoxiao He, Yuxiao Chen, Di Liu, Qilong Zhangli, <span class="me">Jindong Jiang</span>, Zhaoyang Xia, Akash Srivastava, Dimitris Metaxas</p>
+                                <div class="publication-meta"><span class="venue">WACV 2024</span><span class="publication-links"><a href="https://arxiv.org/abs/2306.05414">paper</a></span></div>
+                            </div>
+                        </li>
+                        <li class="publication-card">
+                            <div class="publication-year">2018</div>
+                            <div>
+                                <p class="publication-title"><a href="https://arxiv.org/abs/1806.01054">RedNet: Residual Encoder-Decoder Network for indoor RGB-D Semantic Segmentation</a></p>
+                                <p class="publication-authors"><span class="me">Jindong Jiang</span>, Lunan Zheng, Fei Luo, Zhijun Zhang</p>
+                                <div class="publication-meta"><span class="venue">arXiv 2018</span><span class="publication-links"><a href="https://arxiv.org/abs/1806.01054">paper</a><a href="https://github.com/JindongJiang/RedNet">code</a></span></div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="research-group" data-area="phd" id="phd-research">
+                    <header class="research-group-header">
+                        <h4>Structured Representation Learning &amp; World Models</h4>
+                    </header>
+                    <ul class="publication-list">
+                        <li class="publication-card">
+                            <div class="publication-year">2024</div>
+                            <div>
+                                <p class="publication-title"><a href="https://arxiv.org/abs/2406.12272">Slot State Space Models</a></p>
+                                <p class="publication-authors"><span class="me">Jindong Jiang</span>, Fei Deng, Gautam Singh, Minseung Lee, Sungjin Ahn</p>
+                                <div class="publication-meta"><span class="venue">NeurIPS 2024</span><span class="publication-links"><a href="https://arxiv.org/abs/2406.12272">paper</a><a href="https://slotssms.github.io/">project</a></span></div>
+                            </div>
+                        </li>
+                        <li class="publication-card">
+                            <div class="publication-year">2023</div>
+                            <div>
+                                <p class="publication-title"><a href="https://arxiv.org/abs/2303.10834">Object-Centric Slot Diffusion</a></p>
+                                <p class="publication-authors"><span class="me">Jindong Jiang</span>, Fei Deng, Gautam Singh, Sungjin Ahn</p>
+                                <div class="publication-meta"><span class="venue">NeurIPS 2023</span><span class="award">Spotlight · top 3%</span><span class="publication-links"><a href="https://arxiv.org/abs/2303.10834">paper</a><a href="https://latentslotdiffusion.github.io/">project</a></span></div>
+                            </div>
+                        </li>
+                        <li class="publication-card">
+                            <div class="publication-year">2020</div>
+                            <div>
+                                <p class="publication-title"><a href="https://arxiv.org/abs/2010.12152">Generative Neurosymbolic Machines</a></p>
+                                <p class="publication-authors"><span class="me">Jindong Jiang</span>, Sungjin Ahn</p>
+                                <div class="publication-meta"><span class="venue">NeurIPS 2020</span><span class="award">Spotlight · top 4%</span><span class="publication-links"><a href="https://arxiv.org/abs/2010.12152">paper</a><a href="https://github.com/JindongJiang/GNM">code</a></span></div>
+                            </div>
+                        </li>
+                        <li class="publication-card">
+                            <div class="publication-year">2020</div>
+                            <div>
+                                <p class="publication-title"><a href="https://arxiv.org/abs/2010.02054">Improving Generative Imagination in Object-Centric World Models</a></p>
+                                <p class="publication-authors">Zhixuan Lin, Yi-Fu Wu, Skand Peri, Bofeng Fu, <span class="me">Jindong Jiang</span>, Sungjin Ahn</p>
+                                <div class="publication-meta"><span class="venue">ICML 2020</span><span class="publication-links"><a href="https://arxiv.org/abs/2010.02054">paper</a><a href="https://sites.google.com/view/gswm/home">project</a></span></div>
+                            </div>
+                        </li>
+                        <li class="publication-card">
+                            <div class="publication-year">2020</div>
+                            <div>
+                                <p class="publication-title"><a href="https://arxiv.org/abs/1910.02384">SCALOR: Generative World Models with Scalable Object Representations</a></p>
+                                <p class="publication-authors"><span class="me">Jindong Jiang</span>*, Sepehr Janghorbani*, Gerard de Melo, Sungjin Ahn</p>
+                                <div class="publication-meta"><span class="venue">ICLR 2020</span><span class="publication-links"><a href="https://arxiv.org/abs/1910.02384">paper</a><a href="https://sites.google.com/view/scalor">project</a></span></div>
+                            </div>
+                        </li>
+                        <li class="publication-card">
+                            <div class="publication-year">2020</div>
+                            <div>
+                                <p class="publication-title"><a href="https://arxiv.org/abs/2001.02407">SPACE: Unsupervised Object-Oriented Scene Representation via Spatial Attention and Decomposition</a></p>
+                                <p class="publication-authors">Zhixuan Lin*, Yi-Fu Wu*, Skand Vishwanath Peri*, Weihao Sun, Gautam Singh, Fei Deng, <span class="me">Jindong Jiang</span>, Sungjin Ahn</p>
+                                <div class="publication-meta"><span class="venue">ICLR 2020</span><span class="publication-links"><a href="https://arxiv.org/abs/2001.02407">paper</a><a href="https://sites.google.com/view/space-project-page">project</a></span></div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="year-view" id="publication-year-view" aria-label="Publications by year" hidden>
+                    <ul class="publication-list"></ul>
+                </section>
+
+                <p class="publication-note">* Equal contribution</p>
+            </section>
             <hr />
             <!-- <h3>My Name</h3>
             <p>
@@ -428,6 +767,55 @@
             </p> -->
         </div>
 
+    <script>
+        const viewButtons = document.querySelectorAll(".publication-view-toggle button");
+        const areaNavigation = document.querySelector(".area-nav");
+        const researchGroups = document.querySelectorAll(".research-group");
+        const yearView = document.querySelector("#publication-year-view");
+        const yearList = yearView.querySelector(".publication-list");
+
+        const publicationDates = new Map([
+            ["Nemotron-Labs-Diffusion: A Tri-Mode Language Model Unifying Autoregressive, Diffusion, and Self-Speculation Decoding", "2026-07"],
+            ["4DP-QA: Scalable QA for 4D Perception in Vision Language Models", "2026-06"],
+            ["Recursive Multi-Agent Systems", "2026-04"],
+            ["Stateful Token Reduction for Long-Video Hybrid VLMs", "2026-03"],
+            ["Eagle 2.5: Boosting Long-Context Post-Training for Frontier Vision-Language Models", "2025-04"],
+            ["STORM: Token-Efficient Long Video Understanding for Multimodal LLMs", "2025-03"],
+            ["Slot State Space Models", "2024-06"],
+            ["SceneTextGen: Layout-Agnostic Scene Text Image Synthesis with Diffusion Models", "2024-06"],
+            ["ProxEdit: Improving Tuning-Free Real Image Editing With Proximal Guidance", "2024-01"],
+            ["Object-Centric Slot Diffusion", "2023-09"],
+            ["Generative Neurosymbolic Machines", "2020-12"],
+            ["Improving Generative Imagination in Object-Centric World Models", "2020-07"],
+            ["SCALOR: Generative World Models with Scalable Object Representations", "2020-04"],
+            ["SPACE: Unsupervised Object-Oriented Scene Representation via Spatial Attention and Decomposition", "2020-04"],
+            ["RedNet: Residual Encoder-Decoder Network for indoor RGB-D Semantic Segmentation", "2018-06"]
+        ]);
+
+        [...document.querySelectorAll(".research-group .publication-card")]
+            .sort((first, second) => {
+                const firstTitle = first.querySelector(".publication-title").textContent.trim();
+                const secondTitle = second.querySelector(".publication-title").textContent.trim();
+                return publicationDates.get(secondTitle).localeCompare(publicationDates.get(firstTitle));
+            })
+            .forEach((card) => yearList.appendChild(card.cloneNode(true)));
+
+        viewButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                const showYearView = button.dataset.view === "year";
+
+                viewButtons.forEach((item) => {
+                    item.setAttribute("aria-pressed", String(item === button));
+                });
+
+                areaNavigation.hidden = showYearView;
+                researchGroups.forEach((group) => {
+                    group.hidden = showYearView;
+                });
+                yearView.hidden = !showYearView;
+            });
+        });
+    </script>
 
 </body>
 
