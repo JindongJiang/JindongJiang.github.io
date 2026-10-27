@@ -155,6 +155,31 @@
             height: auto;
         }
 
+        .news-archive summary {
+            width: fit-content;
+            padding: 0.35rem 0.75rem;
+            border: 1px solid #ded6ce;
+            border-radius: 6px;
+            color: #8c552f;
+            font-size: 0.85em;
+            list-style-position: inside;
+            cursor: pointer;
+        }
+
+        .news-archive summary:hover {
+            border-color: #bb7438;
+            background: #fff9f3;
+        }
+
+        .news-archive summary:focus-visible {
+            outline: 2px solid #bb7438;
+            outline-offset: 2px;
+        }
+
+        .news-archive ul {
+            margin-top: 1rem;
+        }
+
         .publication-heading {
             display: flex;
             align-items: flex-end;
@@ -508,75 +533,77 @@
             </span> -->
             <!-- <p>&thinsp;</p> -->
             <hr />
-            <h3>News</h3>
-            <ul>
-                <li><em>Oct 2026: </em>We released <a
+            <h3 id="news">News</h3>
+            <ul id="recent-news">
+                <li data-date="2026-10"><em>Oct 2026: </em>We released <a
                     href="https://research.nvidia.com/labs/lpr/edge-wise/">EdgeWise</a>, enabling agents on local
                     devices to solve long-horizon tasks with selective cloud assistance at lower inference cost.
                 </li>
-                <li><em>Oct 2026: </em>Our <a
+                <li data-date="2026-10"><em>Oct 2026: </em>Our <a
                     href="https://arxiv.org/abs/2610.11291">on-policy distillation study</a> shows that reusing
                     offline student rollouts often improves accuracy and training efficiency.
                 </li>
-                <li><em>Sep 2026: </em>We released <a
+                <li data-date="2026-09"><em>Sep 2026: </em>We released <a
                     href="https://byungkwanlee.github.io/MidHarness-page/">Mid-Harness</a>, improving terminal-agent
                     reliability by sampling and verifying candidate actions before execution.
                 </li>
-                <li><em>May 2026: </em>We released <a
+                <li data-date="2026-05"><em>May 2026: </em>We released <a
                     href="https://research.nvidia.com/publication/2026-05_nemotron-labs-diffusion-tri-mode-language-model-unifying-autoregressive">Nemotron-Labs-Diffusion</a>,
                     a tri-mode LM unifying autoregressive, diffusion, and self-speculation decoding in a single architecture.
                 </li>
-                <li><em>Apr 2026: </em>We released <a
+                <li data-date="2026-04"><em>Apr 2026: </em>We released <a
                     href="https://recursivemas.github.io/">Recursive Multi-Agent Systems</a>, a framework for recursive
                     agent collaboration in latent space.
                 </li>
-                <li><em>Mar 2026: </em>We released <a
+                <li data-date="2026-03"><em>Mar 2026: </em>We released <a
                     href="https://arxiv.org/abs/2603.00198">Stateful Token Reduction</a> for hybrid VLMs: 75% fewer
                     tokens and 4.2&times; faster prefilling with the same or better long-video accuracy.
                 </li>
-                <li><em>Feb 2026: </em>Our <a href="https://research.nvidia.com/labs/lpr/4dpqa/">4DP-QA</a>, a
+                <li data-date="2026-02"><em>Feb 2026: </em>Our <a href="https://research.nvidia.com/labs/lpr/4dpqa/">4DP-QA</a>, a
                     geometry-grounded VLM training recipe for 4D spatiotemporal understanding, was accepted to
                     <span class="dest">CVPR 2026</span>.
                 </li>
-                <li><em>Sep 2025: </em>Our <a href="https://arxiv.org/abs/2504.15271">Eagle 2.5</a>, an 8B VLM that
+                <li data-date="2025-09"><em>Sep 2025: </em>Our <a href="https://arxiv.org/abs/2504.15271">Eagle 2.5</a>, an 8B VLM that
                     matches GPT-4o and models 10&times; larger on long-video understanding, was
                     accepted to <span class="dest">NeurIPS 2025</span>.
                 </li>
-                <li><em>May 2025: </em>I joined <a href="https://research.nvidia.com/labs/lpr/">
+                <li data-date="2025-05"><em>May 2025: </em>I joined <a href="https://research.nvidia.com/labs/lpr/">
                         <span class="news-logo"><img
                             src="https://iprsoftwaremedia.com/219/files/202512/692f56b83d6332f881bbc58b_nvidia-logo-horiz-blk-16x9%201/nvidia-logo-horiz-blk-16x9%201_thmb.png?v=3b6e36c5-dc74-4a75-86f4-5faefc2a7f7d"
                             alt="NVIDIA"></span>Learning and Perception Research Group</a> as a Research
                     Scientist.
                 </li>
-                <li><em>Apr 2025: </em>I successfully completed my Ph.D. defense at <a href="https://www.cs.rutgers.edu/">
+                <li data-date="2025-04"><em>Apr 2025: </em>I successfully completed my Ph.D. defense at <a href="https://www.cs.rutgers.edu/">
                         Rutgers University</a>.
                 </li>
-                <li><em>Mar 2025: </em>Preprint of our new work, <a
+                <li data-date="2025-03"><em>Mar 2025: </em>Preprint of our new work, <a
                     href="https://research.nvidia.com/labs/lpr/storm/">Token-Efficient Long Video Understanding for Multimodal LLMs</a>,
                 for long-video Multimodal LLMs, is out on arXiv.</li>
-                <li><em>Sep 2024: </em>Our <a
+                <li data-date="2024-09"><em>Sep 2024: </em>Our <a
                     href="https://slotssms.github.io/">Slot State Space Models</a> is accepted to <span class="dest">NeurIPS 2024</span>.</li>
-                <li><em>Jun 2024: </em>Preprint of our new work, <a
+                <li data-date="2024-06"><em>Jun 2024: </em>Preprint of our new work, <a
                     href="https://slotssms.github.io/">Slot State Space Models</a>,
                 for modular sequence modeling, is out on arXiv.</li>
-                <li><em>Jun 2024: </em>I joined <a href="https://research.nvidia.com/labs/lpr/">
+                <li data-date="2024-06"><em>Jun 2024: </em>I joined <a href="https://research.nvidia.com/labs/lpr/">
                         <span class="news-logo"><img
                             src="https://iprsoftwaremedia.com/219/files/202512/692f56b83d6332f881bbc58b_nvidia-logo-horiz-blk-16x9%201/nvidia-logo-horiz-blk-16x9%201_thmb.png?v=3b6e36c5-dc74-4a75-86f4-5faefc2a7f7d"
                             alt="NVIDIA"></span>Learning and Perception Research Group</a> as a Research
                     Intern in the Summer of 2024.
                 </li>
-                <li><em>Feb 2024: </em>Our <a href="https://arxiv.org/abs/2406.01062">Layout-Agnostic Scene Text Image Synthesis with Diffusion Models</a> is accepted to <span class="dest">CVPR 2024</span>.</li>
-                <li><em>Sep 2023: </em>Our <a href="https://latentslotdiffusion.github.io/">Object-Centric Slot Diffusion</a> is accepted to <span class="dest">NeurIPS 2023</span> as
+                <li data-date="2024-02"><em>Feb 2024: </em>Our <a href="https://arxiv.org/abs/2406.01062">Layout-Agnostic Scene Text Image Synthesis with Diffusion Models</a> is accepted to <span class="dest">CVPR 2024</span>.</li>
+                <li data-date="2023-09"><em>Sep 2023: </em>Our <a href="https://latentslotdiffusion.github.io/">Object-Centric Slot Diffusion</a> is accepted to <span class="dest">NeurIPS 2023</span> as
                     a 🌟Spotlight🌟 paper.</li>
                 <!-- <li><em>Mar 2023: </em>Preprint of our new work, <a
                         href="https://arxiv.org/abs/2303.10834">Object-Centric Slot Diffusion</a>,
                     for unsupervised object-centric learning using Diffusion Models, is out on arXiv!</li> -->
-                <li><em>Feb 2023: </em>I will be joining <a href="https://research.adobe.com/">Adobe Research</a>
+                <li data-date="2023-02"><em>Feb 2023: </em>I will be joining <a href="https://research.adobe.com/">Adobe Research</a>
                     as a Research Scientist Intern in the Summer of 2023.
                 </li>
             </ul>
-            <!-- <h3>Old News</h3> -->
-            <!-- <p>&thinsp;</p> -->
+            <details class="news-archive" id="news-archive" hidden>
+                <summary>Older news</summary>
+                <ul></ul>
+            </details>
             <hr />
             <section class="publication-section" id="publications">
                 <div class="publication-heading">
@@ -813,6 +840,23 @@
         </div>
 
     <script>
+        const newsList = document.querySelector("#recent-news");
+        const newsArchive = document.querySelector("#news-archive");
+        const archivedNewsList = newsArchive.querySelector("ul");
+        const today = new Date();
+        // News dates have month precision, so keep the anniversary month visible.
+        const cutoffMonth = (today.getFullYear() - 1) * 12 + today.getMonth();
+
+        [...newsList.children].forEach((item) => {
+            const [year, month] = item.dataset.date.split("-").map(Number);
+            if (year * 12 + month - 1 < cutoffMonth) {
+                archivedNewsList.appendChild(item);
+            }
+        });
+
+        newsList.hidden = newsList.children.length === 0;
+        newsArchive.hidden = archivedNewsList.children.length === 0;
+
         const viewButtons = document.querySelectorAll(".publication-view-toggle button");
         const areaNavigation = document.querySelector(".area-nav");
         const researchGroups = document.querySelectorAll(".research-group");
