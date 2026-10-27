@@ -488,9 +488,9 @@
                 <a href="https://www.sungjinahn.com/">Prof. Sungjin Ahn</a>.
             </p>
             <p>
-                My research interests lie in agentic AI and the development of efficient large language and
-                vision-language models. I have also worked on computer vision, structured representation learning,
-                and world models.
+                My current research focuses on two directions. One is efficient LLMs, including speculative
+                decoding and diffusion LLMs. The other is agentic AI, focusing on improving AI on edge devices
+                and edge cloud collaboration.
             </p>
             <!-- <p>
                 The long-term objective of my research is to develop artificial intelligence agents capable of human-like reasoning. This involves designing systems that can uncover latent structure of the physical world, predict future scenarios based on current states, infer the causality or correlation between events, and engage in logical planning to accomplish goals. 
@@ -510,6 +510,18 @@
             <hr />
             <h3>News</h3>
             <ul>
+                <li><em>Oct 2026: </em>We released <a
+                    href="https://research.nvidia.com/labs/lpr/edge-wise/">EdgeWise</a>, enabling agents on local
+                    devices to solve long-horizon tasks with selective cloud assistance at lower inference cost.
+                </li>
+                <li><em>Oct 2026: </em>Our <a
+                    href="https://arxiv.org/abs/2610.11291">on-policy distillation study</a> shows that reusing
+                    offline student rollouts often improves accuracy and training efficiency.
+                </li>
+                <li><em>Sep 2026: </em>We released <a
+                    href="https://byungkwanlee.github.io/MidHarness-page/">Mid-Harness</a>, improving terminal-agent
+                    reliability by sampling and verifying candidate actions before execution.
+                </li>
                 <li><em>May 2026: </em>We released <a
                     href="https://research.nvidia.com/publication/2026-05_nemotron-labs-diffusion-tri-mode-language-model-unifying-autoregressive">Nemotron-Labs-Diffusion</a>,
                     a tri-mode LM unifying autoregressive, diffusion, and self-speculation decoding in a single architecture.
@@ -591,6 +603,28 @@
                         <li class="publication-card">
                             <div class="publication-year">2026</div>
                             <div>
+                                <p class="publication-title"><a href="https://arxiv.org/abs/2610.17560">EdgeWise: Bringing Long-Horizon Agents to the Edge via Selective Cloud Delegation</a></p>
+                                <p class="publication-authors">Zeru Shi*, <span class="me">Jindong Jiang</span>*, Ryo Hachiuma, Yonggan Fu, Byung-Kwan Lee, Peter Belcak, Saurav Muralidharan, Ayush Agarwal, Ruixiang Tang, Ambrish Dantrey, Pavlo Molchanov, Anjul Patney, Subhashree Radhakrishnan</p>
+                                <div class="publication-meta">
+                                    <span class="venue">arXiv 2026</span>
+                                    <span class="publication-links"><a href="https://arxiv.org/abs/2610.17560">paper</a><a href="https://research.nvidia.com/labs/lpr/edge-wise/">project</a></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="publication-card">
+                            <div class="publication-year">2026</div>
+                            <div>
+                                <p class="publication-title"><a href="https://arxiv.org/abs/2609.39982">Mid-Harness: Scaling Actions Between Model and Harness for Terminal Agents</a></p>
+                                <p class="publication-authors">Minki Kang, Ryo Hachiuma, Shaokun Zhang, Subhashree Radhakrishnan, Yonggan Fu, <span class="me">Jindong Jiang</span>, Mingjie Liu, Ehsan Hosseini-Asl, Yi Dong, Yu-Chiang Frank Wang, Byung-Kwan Lee</p>
+                                <div class="publication-meta">
+                                    <span class="venue">arXiv 2026</span>
+                                    <span class="publication-links"><a href="https://arxiv.org/abs/2609.39982">paper</a><a href="https://byungkwanlee.github.io/MidHarness-page/">project</a></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="publication-card">
+                            <div class="publication-year">2026</div>
+                            <div>
                                 <p class="publication-title"><a href="https://arxiv.org/abs/2604.25917">Recursive Multi-Agent Systems</a></p>
                                 <p class="publication-authors">Jiaru Zou, Rui Pan, Ruizhong Qiu, Pan Lu, Shizhe Diao, <span class="me">Jindong Jiang</span>, Hanghang Tong, Tong Zhang, Markus J. Buehler, Jingrui He, James Zou</p>
                                 <div class="publication-meta">
@@ -607,6 +641,17 @@
                         <h4>Large Language Models</h4>
                     </header>
                     <ul class="publication-list">
+                        <li class="publication-card">
+                            <div class="publication-year">2026</div>
+                            <div>
+                                <p class="publication-title"><a href="https://arxiv.org/abs/2610.11291">When Do We Need On-Policy Distillation? Distilling on Offline Student Rollouts Is Often Better</a></p>
+                                <p class="publication-authors">Siyan Zhao, Yonggan Fu, <span class="me">Jindong Jiang</span>, Shih-Yang Liu, Song Bian, Byung-Kwan Lee, Sharath Turuvekere Sreenivas, Wenliang Dai, Hanrong Ye, Aditya Grover, Pavlo Molchanov</p>
+                                <div class="publication-meta">
+                                    <span class="venue">arXiv 2026</span>
+                                    <span class="publication-links"><a href="https://arxiv.org/abs/2610.11291">paper</a></span>
+                                </div>
+                            </div>
+                        </li>
                         <li class="publication-card">
                             <div class="publication-year">2026</div>
                             <div>
@@ -775,6 +820,9 @@
         const yearList = yearView.querySelector(".publication-list");
 
         const publicationDates = new Map([
+            ["EdgeWise: Bringing Long-Horizon Agents to the Edge via Selective Cloud Delegation", "2026-10-13"],
+            ["When Do We Need On-Policy Distillation? Distilling on Offline Student Rollouts Is Often Better", "2026-10-08"],
+            ["Mid-Harness: Scaling Actions Between Model and Harness for Terminal Agents", "2026-09-30"],
             ["Nemotron-Labs-Diffusion: A Tri-Mode Language Model Unifying Autoregressive, Diffusion, and Self-Speculation Decoding", "2026-07"],
             ["4DP-QA: Scalable QA for 4D Perception in Vision Language Models", "2026-06"],
             ["Recursive Multi-Agent Systems", "2026-04"],
