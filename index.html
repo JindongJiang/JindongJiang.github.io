@@ -535,6 +535,16 @@
             <hr />
             <h3 id="news">News</h3>
             <ul id="recent-news">
+                <li data-date="2026-11"><em>Nov 2026: </em>Our study, <a
+                    href="https://arxiv.org/abs/2611.05306">You don't need long context</a>, shows that frequent
+                    compaction and selective reading enable short contexts to largely preserve accuracy on
+                    long-horizon and long-input tasks.
+                </li>
+                <li data-date="2026-10"><em>Oct 2026: </em>We released <a
+                    href="https://research.nvidia.com/labs/lpr/agentbaton/">AgentBaton</a>, which learns when to
+                    hand off from capable to efficient models, cutting API costs by 65.9% on average while
+                    largely preserving accuracy.
+                </li>
                 <li data-date="2026-10"><em>Oct 2026: </em>We released <a
                     href="https://research.nvidia.com/labs/lpr/edge-wise/">EdgeWise</a>, enabling agents on local
                     devices to solve long-horizon tasks with selective cloud assistance at lower inference cost.
@@ -627,6 +637,28 @@
                         <h4>Agentic AI</h4>
                     </header>
                     <ul class="publication-list">
+                        <li class="publication-card">
+                            <div class="publication-year">2026</div>
+                            <div>
+                                <p class="publication-title"><a href="https://arxiv.org/abs/2611.05306">You don't need long context</a></p>
+                                <p class="publication-authors">Peter Belcak, Saurav Muralidharan, <span class="me">Jindong Jiang</span>, Yonggan Fu, Wonmin Byeon, Hanrong Ye, Ryan Angilly, Ali Taghibakhshi, Shih-Yang Liu, Siru Ouyang, Greg Heinrich, Pavlo Molchanov</p>
+                                <div class="publication-meta">
+                                    <span class="venue">arXiv 2026</span>
+                                    <span class="publication-links"><a href="https://arxiv.org/abs/2611.05306">paper</a></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="publication-card">
+                            <div class="publication-year">2026</div>
+                            <div>
+                                <p class="publication-title"><a href="https://arxiv.org/abs/2610.35959">AgentBaton: Efficient Model Collaboration in Agentic Tasks</a></p>
+                                <p class="publication-authors">Junlong Li, <span class="me">Jindong Jiang</span>, Yonggan Fu, Jiarui Yao, Hanrong Ye, Wonmin Byeon, Peter Belcak, Hao Zhang, Pavlo Molchanov</p>
+                                <div class="publication-meta">
+                                    <span class="venue">arXiv 2026</span>
+                                    <span class="publication-links"><a href="https://arxiv.org/abs/2610.35959">paper</a><a href="https://research.nvidia.com/labs/lpr/agentbaton/">project</a></span>
+                                </div>
+                            </div>
+                        </li>
                         <li class="publication-card">
                             <div class="publication-year">2026</div>
                             <div>
@@ -864,6 +896,8 @@
         const yearList = yearView.querySelector(".publication-list");
 
         const publicationDates = new Map([
+            ["You don't need long context", "2026-11-03"],
+            ["AgentBaton: Efficient Model Collaboration in Agentic Tasks", "2026-10-25"],
             ["EdgeWise: Bringing Long-Horizon Agents to the Edge via Selective Cloud Delegation", "2026-10-13"],
             ["When Do We Need On-Policy Distillation? Distilling on Offline Student Rollouts Is Often Better", "2026-10-08"],
             ["Mid-Harness: Scaling Actions Between Model and Harness for Terminal Agents", "2026-09-30"],
